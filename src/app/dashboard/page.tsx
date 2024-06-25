@@ -1,0 +1,32 @@
+"use client";
+import { useLocale } from "@/contexts/LocaleContext";
+import useTranslation from "@/hooks/useTranslation";
+import KGrid from "@/uikit/Grid";
+import { Grid } from "@mui/material";
+import Link from "next/link";
+import { useContext, useState } from "react";
+
+export default function Dashboard() {
+  const { t } = useTranslation();
+  const { locale, setLocale } = useLocale();
+  console.log("locale", locale);
+  const [count, setCount] = useState<number>(0);
+  return (
+    <div>
+      <button>{locale}</button>
+      <div>{t("welcome")}</div>;
+      <Grid container rowSpacing={1}>
+        <Grid xs={6}>1</Grid>
+        <Grid xs={6}>2</Grid>
+        <Grid xs={6}>3</Grid>
+        <Grid xs={6}>4</Grid>
+      </Grid>
+      <KGrid.Container>
+        <KGrid.Item xs={3}>1</KGrid.Item>
+        <KGrid.Item xs={3}>1</KGrid.Item>
+        <KGrid.Item xs={3}>1</KGrid.Item>
+        <KGrid.Item xs={3}>1</KGrid.Item>
+      </KGrid.Container>
+    </div>
+  );
+}
