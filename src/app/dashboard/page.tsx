@@ -2,6 +2,7 @@
 import { useLocale } from "@/contexts/LocaleContext";
 import useTranslation from "@/hooks/useTranslation";
 import KGrid from "@/uikit/Grid";
+import KInput from "@/uikit/Input";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 import { useContext, useState } from "react";
@@ -15,7 +16,7 @@ export default function Dashboard() {
     <div>
       <button>{locale}</button>
       <div>{t("welcome")}</div>;
-      <Grid container rowSpacing={1}>
+      {/* <Grid container rowSpacing={1}>
         <Grid xs={6}>1</Grid>
         <Grid xs={6}>2</Grid>
         <Grid xs={6}>3</Grid>
@@ -27,6 +28,9 @@ export default function Dashboard() {
         <KGrid.Item xs={3}>1</KGrid.Item>
         <KGrid.Item xs={3}>1</KGrid.Item>
       </KGrid.Container>
+      <KGrid.Container> */}
+      <KInput.TextField />
+      {/* </KGrid.Container> */}
     </div>
   );
 }
