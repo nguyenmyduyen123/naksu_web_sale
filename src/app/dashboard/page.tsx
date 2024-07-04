@@ -11,6 +11,7 @@ export default function Dashboard() {
   const { locale, setLocale } = useLocale();
   console.log("locale", locale);
   const [count, setCount] = useState<number>(0);
+
   return (
     <div>
       <button>{locale}</button>
@@ -21,8 +22,11 @@ export default function Dashboard() {
         <Grid xs={6}>3</Grid>
         <Grid xs={6}>4</Grid>
       </Grid>
+    
       <KGrid.Container>
-        <KGrid.Item xs={3}>1</KGrid.Item>
+        <KGrid.Item xs={3}>
+          shvhsvbhsv
+        </KGrid.Item>
         <KGrid.Item xs={3}>1</KGrid.Item>
         <KGrid.Item xs={3}>1</KGrid.Item>
         <KGrid.Item xs={3}>1</KGrid.Item>
