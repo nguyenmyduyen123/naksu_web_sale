@@ -25,20 +25,19 @@ class APIManager {
         res = await apiInstance({
           method: method.toLowerCase(),
           url: body ? `${url}?${qs.stringify(body)}` : url,
-          ...configs
+          ...configs,
         });
       } else {
         res = await apiInstance({
           method: method.toLowerCase(),
           url,
           data: body,
-          ...configs
-          
+          ...configs,
         });
       }
 
-      if(res.data?.success){
-        console.log(res)
+      if (res.data?.success) {
+        console.log(res);
       }
     } catch (e: any) {}
   };
