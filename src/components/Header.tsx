@@ -34,11 +34,18 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import KLabel from "@/uikit/Label";
+import APIManager from "@/services";
+import { useUser } from "@/contexts/UserContext";
+import { STORAGE_KEYS, StorageEnhance } from "@/core/storage";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
+  const { user, setUser } = useUser();
+
+  console.log(user, "sbgvsbvbsbvs")
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -160,10 +167,40 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  {/* <Typography textAlign="center">{setting}</Typography> */}
                   <KLabel.Text textAlign="center">{setting}</KLabel.Text>
                 </MenuItem>
               ))}
+              <MenuItem
+                onClick={async () => {
+                  const res = await APIManager.request({
+                    url: "api/user/login",
+                    method: "POST",
+                    body: {
+                      username: "1qqq2ư123",
+                      hashed_password: "125hrhr34",
+                    },
+                  });
+
+                  console.log(res, "shvshvhshvsh");
+                  setUser(res?.data);
+                  StorageEnhance.set(STORAGE_KEYS.user, res?.data ?? {})
+                }}
+              >
+                <KLabel.Text textAlign="center">Login</KLabel.Text>
+              </MenuItem>
+
+              <MenuItem
+                onClick={async () => {
+                  const res = await APIManager.request({
+                    url: "api/user/get-all-user",
+                    method: "GET"
+                  });
+
+                  console.log(res, "shvshvhshvsh");
+                }}
+              >
+                <KLabel.Text textAlign="center">Get all user</KLabel.Text>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

@@ -9,10 +9,11 @@ export const COMMON_HEADERS = {
 };
 
 export const apiInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_API,
+  baseURL: 'http://127.0.0.1:8000/',
   headers: COMMON_HEADERS,
   timeout: TIMEOUT,
 });
 
 class APIManager {
 }
+

@@ -6,6 +6,9 @@ import KInput from "@/uikit/Input";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 import { useContext, useState } from "react";
+import Test from '@uikit/Test';
+
+
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -15,6 +18,7 @@ export default function Dashboard() {
 
   return (
     <div>
+      <Test/>
       <button>{locale}</button>
       <div>{t("welcome")}</div>;
       {/* <Grid container rowSpacing={1}>
