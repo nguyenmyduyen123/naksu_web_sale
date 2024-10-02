@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@uikit/*": ["vite-app/UI-Base/src/uikit/*"]
+      // "@uikit": ["vite-app/UI-Base/dist/ui-base.umd.js"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

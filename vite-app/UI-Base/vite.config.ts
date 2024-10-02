@@ -5,7 +5,20 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "public/assets", // Đưa các tệp đã build vào thư mục public của Next.js
-    emptyOutDir: true, // Dọn sạch thư mục trước khi build
-  },
+    lib: {
+      entry: 'src/index.tsx',  // Điểm vào của thư viện
+      name: 'UIBase',
+      fileName: (format) => `ui-base.${format}.js`
+    },
+    rollupOptions: {
+      // Đặt các thư viện React và ReactDOM là external, để sử dụng từ Next.js
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
+        }
+      }
+    }
+  }
 });

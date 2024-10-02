@@ -6,8 +6,8 @@ import KInput from "@/uikit/Input";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 import { useContext, useState } from "react";
-import Test from '@uikit/Test';
-
+// import { Test } from 'vite-app/UI-Base/src';
+import { TestA } from 'vite-app/UI-Base/dist/ui-base.umd';
 
 
 export default function Dashboard() {
@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <Test/>
+      
       <button>{locale}</button>
       <div>{t("welcome")}</div>;
       {/* <Grid container rowSpacing={1}>
