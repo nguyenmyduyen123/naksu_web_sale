@@ -7,8 +7,7 @@ import { Grid } from "@mui/material";
 import Link from "next/link";
 import { useContext, useState } from "react";
 // import { Test } from 'vite-app/UI-Base/src';
-import { TestA } from 'vite-app/UI-Base/dist/ui-base.umd';
-
+import { TestA } from "vite-app/UI-Base";
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -18,7 +17,6 @@ export default function Dashboard() {
 
   return (
     <div>
-      
       <button>{locale}</button>
       <div>{t("welcome")}</div>;
       {/* <Grid container rowSpacing={1}>
