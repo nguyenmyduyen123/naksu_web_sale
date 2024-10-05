@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn build:vite && next build",
+    "build:vite": "cd vite-app/UI-Base && yarn build",
     "start": "next start",
     "lint": "next lint"
   },
