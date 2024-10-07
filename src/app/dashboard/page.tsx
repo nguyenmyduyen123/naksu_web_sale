@@ -7,8 +7,10 @@ import KInput from "@/uikit/Input";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 import { useContext, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import { Test } from 'vite-app/UI-Base/src';
 import { TestA } from "vite-app/UI-Base";
+import "swiper/css";
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -17,7 +19,7 @@ export default function Dashboard() {
   const [count, setCount] = useState<number>(0);
 
   return (
-    <div>
+    <div className="grid gap-4">
       {/* <TestA/> */}
       {/* <button>{locale}</button>
       <div>{t("welcome")}</div>; */}
@@ -55,9 +57,61 @@ export default function Dashboard() {
       </div>
       <div className="container">
         <div className="grid grid-cols-[3fr_5fr_5fr] gap-4">
-          <div className="bg-blue-200 hidden md:block">Cột 1 (3 phần)</div>
-          <div className="bg-green-200">Cột 2 (4 phần)</div>
-          <div className="bg-red-200">Cột 3 (4 phần)</div>
+          <div className="w-full">
+            <div className="flex flex-wrap justify-between">
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+              <div className="w-3/6">
+                <div className="box-border border-2 border-gray-500 h-32">
+                  1
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-200">
+            <div>Sản phẩm nổi bật</div>
+            <div>
+              <Swiper className="overflow-hidden">
+                <SwiperSlide>Slide 1</SwiperSlide>
+                <SwiperSlide>Slide 1</SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+          <div className="w-full bg-red-200">Cột 3 (4 phần)</div>
         </div>
       </div>
     </div>
