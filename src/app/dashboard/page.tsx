@@ -1,4 +1,5 @@
 "use client";
+import Carousel from "@/components/dashboard/Carousel";
 import { useLocale } from "@/contexts/LocaleContext";
 import useTranslation from "@/hooks/useTranslation";
 import KGrid from "@/uikit/Grid";
@@ -17,27 +18,48 @@ export default function Dashboard() {
 
   return (
     <div>
-      <TestA/>
-      <button>{locale}</button>
-      <div>{t("welcome")}</div>;
-      {/* <Grid container rowSpacing={1}>
-        <Grid xs={6}>1</Grid>
-        <Grid xs={6}>2</Grid>
-        <Grid xs={6}>3</Grid>
-        <Grid xs={6}>4</Grid>
-      </Grid>
-    
-      <KGrid.Container>
-        <KGrid.Item xs={3}>
-          shvhsvbhsv
-        </KGrid.Item>
-        <KGrid.Item xs={3}>1</KGrid.Item>
-        <KGrid.Item xs={3}>1</KGrid.Item>
-        <KGrid.Item xs={3}>1</KGrid.Item>
-      </KGrid.Container>
-      <KGrid.Container> */}
-      <KInput.TextField />
-      {/* </KGrid.Container> */}
+      {/* <TestA/> */}
+      {/* <button>{locale}</button>
+      <div>{t("welcome")}</div>; */}
+      <div className="h-14">
+        <div className="container h-full">
+          <ul className="float-left flex items-center space-x-1  h-full">
+            <li>Đăng nhập</li>
+            <li>Đăng kí</li>
+          </ul>
+
+          <ul className="float-right flex items-center space-x-1  h-full">
+            <li>Tìm kiếm</li>
+            <li>Giỏ hàng</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="h-16">
+        <div className="container h-full px-5">
+          <ul className="float-left flex  items-center space-x-2 h-full">
+            <li>Trang chủ</li>
+            <li>Giới thiệu</li>
+            <li>Dịch vụ</li>
+          </ul>
+
+          <ul className="float-right flex  items-center space-x-2 h-full">
+            <li>Sản phẩm</li>
+            <li>Tin tức</li>
+            <li>Liên hệ</li>
+          </ul>
+        </div>
+      </div>
+      <div className="container">
+        <Carousel />
+      </div>
+      <div className="container">
+        <div className="grid grid-cols-[3fr_5fr_5fr] gap-4">
+          <div className="bg-blue-200 hidden md:block">Cột 1 (3 phần)</div>
+          <div className="bg-green-200">Cột 2 (4 phần)</div>
+          <div className="bg-red-200">Cột 3 (4 phần)</div>
+        </div>
+      </div>
     </div>
   );
 }
