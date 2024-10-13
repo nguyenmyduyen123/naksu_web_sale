@@ -25,4 +25,4 @@ jobs:
         run: npm run build  # Build dự án
 
       - name: Deploy to Vercel
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=${{ secrets.VERCEL_PROJECT_ID }}
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --project-id=prj_Gha5qbjfyUOCpRm3RW47p3BI5Z75
