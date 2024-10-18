@@ -1,12 +1,18 @@
 name: Deploy to Vercel
 
+# on:
+#   push:
+#     branches:
+#       - main  # Tự động chạy khi có thay đổi trên nhánh main
 on:
-  push:
+  pull_request:
     branches:
-      - main  # Tự động chạy khi có thay đổi trên nhánh main
+      - main
+    types: [closed]
 
 jobs:
   deploy:
+    if: ${{github.event.pull_request == true}}
     runs-on: ubuntu-latest
 
     steps:
@@ -16,13 +22,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Phiên bản Node.js mà dự án sử dụng
+          node-version: "20" # Phiên bản Node.js mà dự án sử dụng
+      - name: Install Yarn
+        run: npm install --global yarn@1
 
       - name: Install dependencies
-        run: npm install  # Cài đặt các phụ thuộc
+        run: yarn # Cài đặt các phụ thuộc
 
       - name: Build the project
-        run: npm run build  # Build dự án
+        run: yarn build # Build dự án
 
       - name: Deploy to Vercel
         run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
