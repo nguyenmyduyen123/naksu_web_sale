@@ -52,66 +52,25 @@ export default function Dashboard() {
           </ul>
         </div>
       </div>
-      <div className="container">
+      <div className="min-w-full">
         <Carousel />
       </div>
       <div className="container">
-        <div className="grid grid-cols-[3fr_5fr_5fr] gap-4">
-          <div className="w-full">
-            <div className="flex flex-wrap justify-between">
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
-              <div className="w-3/6">
-                <div className="box-border border-2 border-gray-500 h-32">
-                  1
-                </div>
-              </div>
+        <div className="flex">
+          <div className="flex-[3_3_0%] bg-blue-300">
+            <div className="flex flex-row flex-wrap">
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
+              <div className="w-2/4 h-28">1</div>
             </div>
           </div>
-
-          <div className="bg-green-200">
-            <div>Sản phẩm nổi bật</div>
-            <div>
-              <Swiper className="overflow-hidden">
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 1</SwiperSlide>
-              </Swiper>
-            </div>
-          </div>
-          <div className="w-full bg-red-200">Cột 3 (4 phần)</div>
+          <div className="flex-[5_5_0%] bg-green-300">Cột 2 (5 phần)</div>
+          <div className="flex-[5_5_0%] bg-red-300">Cột 3 (5 phần)</div>
         </div>
       </div>
     </div>
